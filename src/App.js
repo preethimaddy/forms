@@ -34,6 +34,11 @@ setPrompts([...prompts, {
 }])  
 
   }
+  const handleDelete = (i) =>{
+    let deletePrompts = [...prompts];
+    deletePrompts.splice(i,1);
+    setPrompts(deletePrompts);
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!userInfo.firstName || !userInfo.lastname || !userInfo.email) {
@@ -98,6 +103,7 @@ setPrompts([...prompts, {
         {prompts.map((prompt,i)=>(
           <div key={prompt.timestamp} className='flex flex-col'>
           <label  className='text-2xl text-left pl-2 font-semibold'>Select a prompt</label>
+<div className='flex flex-row items-center gap-2'>
           <select className=" w-3/5 border rounded text-lg 
         leading-tight py-3 px-2 mt-4 focus:outline-indigo-200" id="prompt" name="prompt" onChange={e=> handlePrompt(e,i)}>
             <option value="going out with friends">Going out for a movie..</option>
@@ -106,6 +112,10 @@ setPrompts([...prompts, {
             <option value="I want someone who...">I want someone who...</option>
             <option value="The most special day of my life">The most special day of my life</option>
           </select>
+          <button className='border bg-red-400 py-2.5 px-4 rounded-lg text-white font-bold text-xl' onClick={handleDelete} >
+           -
+          </button>
+          </div>
           <textarea
       className="border border-dashed py-3 px-2 mb-4 focus:outline-indigo-200 text-sm"
       id="answer1"
