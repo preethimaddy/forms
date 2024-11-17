@@ -104,17 +104,22 @@ setPrompts([...prompts, {
           <div key={prompt.timestamp} className='flex flex-col'>
           <label  className='text-2xl text-left pl-2 font-semibold'>Select a prompt</label>
 <div className='flex flex-row items-center gap-2'>
-          <select className=" w-3/5 border rounded text-lg 
-        leading-tight py-3 px-2 mt-4 focus:outline-indigo-200" id="prompt" name="prompt" onChange={e=> handlePrompt(e,i)}>
+  <div className="flex items-center space-x-4 mt-4">
+  <select className="w-3/5 border border-gray-300 rounded-lg text-lg leading-tight py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="prompt" name="prompt" onChange={e=> handlePrompt(e,i)}>
+          <option>Select Prompt</option>
             <option value="going out with friends">Going out for a movie..</option>
             <option value="wake me soon">Wake soon</option>
             <option value="I spend most of my money On:">I spend most of my money On:</option>
             <option value="I want someone who...">I want someone who...</option>
             <option value="The most special day of my life">The most special day of my life</option>
           </select>
-          <button className='border bg-red-400 py-2.5 px-4 rounded-lg text-white font-bold text-xl' onClick={handleDelete} >
+          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1.5 px-3.5 rounded-lg transition ease-in-out duration-200"
+    onClick={() => handleDelete()
+     } >
            -
           </button>
+  </div>
+          
           </div>
           <textarea
       className="border border-dashed py-3 px-2 mb-4 focus:outline-indigo-200 text-sm"
