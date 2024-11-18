@@ -113,13 +113,12 @@ setPrompts([...prompts, {
             <option value="I want someone who...">I want someone who...</option>
             <option value="The most special day of my life">The most special day of my life</option>
           </select>
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1.5 px-3.5 rounded-lg transition ease-in-out duration-200"
+          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3.5 rounded-lg transition ease-in-out duration-200"
     onClick={() => handleDelete()
      } >
            -
           </button>
-  </div>
-          
+  </div>  
           </div>
           <textarea
       className="border border-dashed py-3 px-2 mb-4 focus:outline-indigo-200 text-sm"
@@ -134,7 +133,7 @@ setPrompts([...prompts, {
         )) }
         
         <div className='w-full flex justify-center'></div>
-        <button className='border-bg-violet-400 py-1 px-2 rounded-lg text-black font-bold text-xl' onClick={handleAddPrompt}>Add prompt</button>
+        <button className='border bg-violet-400 py-1 px-2 rounded-lg text-black font-bold text-xl' onClick={handleAddPrompt}>Add prompt</button>
         <button className='bg-green-400'  onClick={handleSubmit}>Submit</button>
       </fieldset>
      </form>
